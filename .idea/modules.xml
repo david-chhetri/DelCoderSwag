@@ -3,6 +3,7 @@
   <component name="ProjectModuleManager">
     <modules>
       <module fileurl="file://$PROJECT_DIR$/DelCoderSwag.iml" filepath="$PROJECT_DIR$/DelCoderSwag.iml" group="DelCoderSwag" />
+      <module fileurl="file://$PROJECT_DIR$/KotlinProj-DelCoderSwag.iml" filepath="$PROJECT_DIR$/KotlinProj-DelCoderSwag.iml" group="DelCoderSwag" />
       <module fileurl="file://$PROJECT_DIR$/app/app.iml" filepath="$PROJECT_DIR$/app/app.iml" group="DelCoderSwag/app" />
     </modules>
   </component>
