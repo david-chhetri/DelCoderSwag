@@ -1,9 +1,11 @@
-package com.foo.delcoderswag.Service
+package com.foo.coderswagn.Services
 
-import com.foo.delcoderswag.Model.Category
-import com.foo.delcoderswag.Model.Product
+import com.foo.coderswagn.Model.Category
+import com.foo.coderswagn.Model.Product
 
-
+/**
+ * Created by David Chhetri on 04,October,2021
+ */
 object DataService {
     val categories = listOf(
         Category("SHIRTS","shirtimage"),
