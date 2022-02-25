@@ -13,13 +13,11 @@ import com.foo.coderswagn.R
 /**
  * Created by David Chhetri on 25,February,2022
  */
-class CategoryRecycleAdapter(context: Context, categories: List<Category>): RecyclerView.Adapter<CategoryRecycleAdapter.Holder>() {
-    val categories = categories
-    val context = context
+class CategoryRecycleAdapter(val context: Context, val categories: List<Category>,val itemClick: (Category) -> Unit): RecyclerView.Adapter<CategoryRecycleAdapter.Holder>() {
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): Holder {
         val view = LayoutInflater.from(context).inflate(R.layout.category_list_item,parent,false)
-        return Holder(view)
+        return Holder(view,itemClick)
     }
 
     override fun getItemCount(): Int {
@@ -30,7 +28,7 @@ class CategoryRecycleAdapter(context: Context, categories: List<Category>): Recy
         holder.bindCategory(context,categories[position])
     }
 
-    inner class Holder(itemView: View): RecyclerView.ViewHolder(itemView){
+    inner class Holder(itemView: View, val itemClick: (Category) -> Unit): RecyclerView.ViewHolder(itemView){
         //get ref to views
         val categoryImage = itemView.findViewById<ImageView>(R.id.categoryImage)
         val categoryName = itemView.findViewById<TextView>(R.id.categoryName)
@@ -39,6 +37,8 @@ class CategoryRecycleAdapter(context: Context, categories: List<Category>): Recy
             val resourceId = context.resources.getIdentifier(category.image,"drawable",context.packageName)
             categoryImage.setImageResource(resourceId)
             categoryName.text = category.title
+
+            itemView.setOnClickListener { itemClick(category) }
         }
 
     }
